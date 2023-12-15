@@ -19,7 +19,6 @@ public class PaymentController {
 
     @PostMapping("/processPayment")
     public Payment makePayment(@RequestBody Payment payment){
-        String requestId = UUID.randomUUID().toString();
-        return paymentProxy.makePayment(requestId,payment);
+        return paymentProxy.makePaymentUsingRest(payment);
     }
 }
